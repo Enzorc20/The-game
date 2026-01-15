@@ -1,0 +1,46 @@
+<div class="container">
+
+  <!-- INFORMAÇÕES DO PERSONAGEM -->
+  <section class="info-personagem">
+    <h2>Informações</h2>
+    <p>Nome: <span id="nomePersonagem">—</span></p>
+    <p>Raça: <span id="racaPersonagem">—</span></p>
+    <p>Classe: <span id="classePersonagem">—</span></p>
+    <p>Profissão: <span id="profissaoPersonagem">—</span></p>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section class="habilidades">
+    <h2>Habilidades</h2>
+    <ul id="listaHabilidades">
+      <!-- Habilidades escolhidas vão aparecer aqui -->
+    </ul>
+  </section>
+
+  <!-- TALENTOS -->
+  <section class="talentos">
+    <h2>Talentos</h2>
+    <ul id="listaTalentos">
+      <!-- Talentos escolhidos vão aparecer aqui -->
+    </ul>
+  </section>
+
+  <!-- INVENTÁRIO -->
+  <section class="inventario">
+    <h2>Inventário</h2>
+    <ul id="listaItens">
+      <!-- Itens do inventário -->
+    </ul>
+  </section>
+
+  <!-- IMAGEM / BONECO DO PERSONAGEM -->
+  <section class="personagem">
+    <h2>Boneco do Personagem</h2>
+    <input type="file" id="imagemPersonagem" accept="image/*">
+    <div id="boneco" style="margin-top: 15px;">
+      <img id="imagemMostrada" src="" alt="Boneco do Personagem" 
+           style="width: 200px; height: 200px; object-fit: contain; border: 2px solid #ffd700; border-radius: 10px;">
+    </div>
+  </section>
+
+</div>
