@@ -1,0 +1,69 @@
+let habilidades = [];
+let talentos = [];
+let inventario = [];
+
+function escolherClasse() {
+  const classe = document.getElementById("classeSelect").value;
+  const subclasse = document.getElementById("subclasseSelect").value;
+  alert("Você escolheu " + classe + " - " + subclasse);
+}
+
+function adicionarHabilidade(nome) {
+  if (!habilidades.includes(nome)) {
+    habilidades.push(nome);
+    atualizarHabilidades();
+  }
+}
+
+function atualizarHabilidades() {
+  const lista = document.getElementById("habilidadesEscolhidas");
+  lista.innerHTML = "";
+  habilidades.forEach(hab => {
+    const li = document.createElement("li");
+    li.textContent = hab;
+    lista.appendChild(li);
+  });
+}
+
+function adicionarTalento(nome) {
+  if (!talentos.includes(nome)) {
+    talentos.push(nome);
+    atualizarTalentos();
+  }
+}
+
+function atualizarTalentos() {
+  const lista = document.getElementById("talentosEscolhidos");
+  lista.innerHTML = "";
+  talentos.forEach(tal => {
+    const li = document.createElement("li");
+    li.textContent = tal;
+    lista.appendChild(li);
+  });
+}
+
+function adicionarItem() {
+  const item = document.getElementById("novoItem").value;
+  if (item && !inventario.includes(item)) {
+    inventario.push(item);
+    atualizarInventario();
+  }
+  document.getElementById("novoItem").value = "";
+}
+
+function atualizarInventario() {
+  const lista = document.getElementById("itens");
+  lista.innerHTML = "";
+  inventario.forEach(it => {
+    const li = document.createElement("li");
+    li.textContent = it;
+    const btn = document.createElement("button");
+    btn.textContent = "Remover";
+    btn.onclick = () => {
+      inventario = inventario.filter(i => i !== it);
+      atualizarInventario();
+    };
+    li.appendChild(btn);
+    lista.appendChild(li);
+  });
+}
