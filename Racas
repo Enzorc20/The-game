@@ -1,0 +1,85 @@
+// js/script-racas.js
+
+// Estrutura das raças
+const racas = {
+  HUMANO: {
+    nome: "Humano",
+    bonus: { pv: 10, pe: 5, defesa: 5 },
+    podeTerClasse: true,
+    descricao: "Versátil e adaptável, alguns podem desenvolver classes."
+  },
+  ELFO: {
+    nome: "Elfo",
+    bonus: { pv: 5, pe: 10, defesa: 5 },
+    podeTerClasse: true,
+    descricao: "Ágeis e perceptivos, alguns podem se tornar magos ou caçadores."
+  },
+  ANÃO: {
+    nome: "Anão",
+    bonus: { pv: 15, pe: 5, defesa: 10 },
+    podeTerClasse: true,
+    descricao: "Fortes e resistentes, especializados em combate e forja."
+  },
+  ORC: {
+    nome: "Orc",
+    bonus: { pv: 20, pe: 0, defesa: 10 },
+    podeTerClasse: false,
+    descricao: "Brutais e agressivos, normalmente sem classes sofisticadas."
+  },
+  TROLL: {
+    nome: "Troll",
+    bonus: { pv: 25, pe: 0, defesa: 15 },
+    podeTerClasse: false,
+    descricao: "Gigantes resistentes, raramente desenvolvem classes."
+  }
+};
+
+// Criação de personagem base de uma raça
+function criarPersonagem(nome, racaEscolhida) {
+  const raca = racas[racaEscolhida];
+  if (!raca) return null;
+
+  return {
+    nome: nome,
+    raca: raca.nome,
+    nivel: 1,
+    pv: 100 + (raca.bonus.pv || 0),
+    pe: 50 + (raca.bonus.pe || 0),
+    defesa: 20 + (raca.bonus.defesa || 0),
+    classe: null,
+    habilidadesClasse: [],
+    habilidadesSubclasse: [],
+    inventario: [],
+    experiencia: 0
+  };
+}
+
+// Sistema de evolução ao subir de nível
+function subirNivel(personagem) {
+  personagem.nivel += 1;
+  // Aumento automático de stats por nível
+  personagem.pv += 10;
+  personagem.pe += 5;
+  personagem.defesa += 2;
+}
+
+// Função para adicionar item ao inventário
+function adicionarItem(personagem, item) {
+  personagem.inventario.push(item);
+}
+
+// Função de exemplo para adicionar classe e subclasse
+function definirClasse(personagem, classe, subclasse, habilidadesClasse, habilidadesSubclasse) {
+  if (!personagem.raca) return;
+  personagem.classe = classe;
+  personagem.habilidadesClasse = habilidadesClasse.slice(0,5); // máximo 5 habilidades de classe
+  personagem.habilidadesSubclasse = habilidadesSubclasse.slice(0,4); // máximo 4 habilidades de subclasse
+}
+
+// Exemplo de uso
+let heroi1 = criarPersonagem("Enzo", "HUMANO");
+subirNivel(heroi1);
+adicionarItem(heroi1, "Espada de Bronze");
+definirClasse(heroi1, "Bárbaro", "Rúnico", ["Ataque Pesado","Ataque Rápido","Ataque Sangrento","Ataque Destruidor","Golpe Final"], ["Runa de Proteção","Runa de Explosão","Runa de Cura","Runa de Teleporte"]);
+
+console.log(heroi1);
