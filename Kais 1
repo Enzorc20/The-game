@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olimpo RPG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Olimpo RPG</h1>
+  </header>
+
+  <main>
+    <!-- Boneco do Personagem -->
+    <section id="personagem">
+      <h2>Boneco do Personagem</h2>
+      <input type="text" id="imgUrl" placeholder="Coloque o link da imagem do personagem">
+      <button id="btnAddImg">Atualizar Imagem</button>
+      <div id="boneco">
+        <img src="https://via.placeholder.com/150" alt="Boneco" id="imgPersonagem">
+      </div>
+    </section>
+
+    <!-- Atributos e Nível -->
+    <section id="atributos">
+      <h2>Atributos</h2>
+      <p>Força: <span id="forca">10</span></p>
+      <p>Agilidade: <span id="agilidade">10</span></p>
+      <p>Presença: <span id="presenca">10</span></p>
+      <p>Inteligência: <span id="inteligencia">10</span></p>
+      <p>Vigor: <span id="vigor">10</span></p>
+      <p>PV: <span id="pv">50</span></p>
+      <p>PE: <span id="pe">30</span></p>
+      <p>Defesa: <span id="defesa">5</span></p>
+      <button id="subirNivel">Subir Nível</button>
+    </section>
+
+    <!-- Profissão -->
+    <section id="profissao">
+      <h2>Profissão</h2>
+      <input type="text" id="inputProfissao" placeholder="Digite sua profissão">
+      <button id="btnProfissao">Definir Profissão</button>
+      <p id="mostraProfissao"></p>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <input type="text" id="inputHabilidade" placeholder="Digite a habilidade">
+      <button id="btnHabilidade">Adicionar Habilidade</button>
+      <ul id="listaHabilidades"></ul>
+    </section>
+
+    <!-- Talentos -->
+    <section id="talentos">
+      <h2>Talentos</h2>
+      <input type="text" id="inputTalento" placeholder="Digite o talento">
+      <button id="btnTalento">Adicionar Talento</button>
+      <ul id="listaTalentos"></ul>
+    </section>
+
+    <!-- Inventário -->
+    <section id="inventario">
+      <h2>Inventário</h2>
+      <input type="text" id="nomeItemInput" placeholder="Nome do item">
+      <input type="text" id="descItemInput" placeholder="Descrição do item">
+      <button id="btnAddItem">Adicionar Item</button>
+      <ul id="listaItens"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
