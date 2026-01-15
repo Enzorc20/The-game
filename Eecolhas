@@ -1,0 +1,103 @@
+<div class="container">
+
+  <!-- ===== STATS ===== -->
+  <section class="stats">
+    <h2>Stats de <span id="nome-personagem">Jogador</span></h2>
+    <p>PV: <span id="pv">100</span></p>
+    <p>PE: <span id="pe">50</span></p>
+    <p>DEF: <span id="def">10</span></p>
+    <p>Mental: <span id="mental">50</span></p>
+    <button id="btn-nivel">Subir Nível</button>
+  </section>
+
+  <!-- ===== INVENTÁRIO ===== -->
+  <section class="inventario">
+    <h2>Inventário</h2>
+    <ul id="inventario-lista"></ul>
+    <input type="text" id="novo-item" placeholder="Novo item">
+    <button id="btn-adicionar">Adicionar Item</button>
+  </section>
+
+  <!-- ===== CLASSE E SUBCLASSE ===== -->
+  <section class="classe">
+    <h2>Escolha sua Classe</h2>
+    <label for="classe-select">Classe:</label>
+    <select id="classe-select">
+      <option value="Bárbaro">Bárbaro</option>
+      <option value="Guerreiro">Guerreiro</option>
+      <option value="Amante dos Mares">Amante dos Mares</option>
+      <option value="Assassino">Assassino</option>
+      <option value="Ilusionista">Ilusionista</option>
+      <option value="Druida">Druida</option>
+      <option value="Forjador">Forjador</option>
+      <option value="Caçador">Caçador</option>
+      <option value="Necromante">Necromante</option>
+      <option value="Estrategista">Estrategista</option>
+      <option value="Inquisidor">Inquisidor</option>
+      <option value="Oráculo">Oráculo</option>
+      <option value="Deusa do Desejo">Deusa do Desejo</option>
+      <option value="Deus da Velocidade">Deus da Velocidade</option>
+      <option value="Deusa da Natureza">Deusa da Natureza</option>
+      <option value="Deus do Caos">Deus do Caos</option>
+    </select>
+
+    <label for="subclasse-select">Subclasse:</label>
+    <select id="subclasse-select">
+      <option value="Rúnico">Rúnico</option>
+      <option value="Sacrificial">Sacrificial</option>
+      <option value="Fúria">Fúria</option>
+      <option value="Instinto">Instinto</option>
+      <option value="Espadachim">Espadachim</option>
+      <option value="Lanceiro">Lanceiro</option>
+      <option value="Defensor">Defensor</option>
+      <option value="Berserker">Berserker</option>
+      <option value="Pirata">Pirata</option>
+      <option value="Marinheiro">Marinheiro</option>
+      <option value="Capitão">Capitão</option>
+      <option value="Foragido">Foragido</option>
+      <option value="Espião">Espião</option>
+      <option value="Manequim">Manequim</option>
+      <option value="Torturador">Torturador</option>
+      <option value="Ladino">Ladino</option>
+      <option value="Sonho">Sonho</option>
+      <option value="Êxtase">Êxtase</option>
+      <option value="Verdadeiro">Verdadeiro</option>
+      <option value="Sugestão">Sugestão</option>
+      <option value="Domadora">Domadora</option>
+      <option value="Amante da Floresta">Amante da Floresta</option>
+      <option value="Gota da Vida">Gota da Vida</option>
+      <option value="Espíritos">Espíritos</option>
+      <option value="Ferreiro">Ferreiro</option>
+      <option value="Construtor">Construtor</option>
+      <option value="Avaliador">Avaliador</option>
+      <option value="Destruidor">Destruidor</option>
+      <option value="Armadilhas">Armadilhas</option>
+      <option value="Parceiro">Parceiro</option>
+      <option value="GPS">GPS</option>
+      <option value="Sobrevivente">Sobrevivente</option>
+      <option value="Quimera">Quimera</option>
+      <option value="Ritualista">Ritualista</option>
+      <option value="Zumbi">Zumbi</option>
+      <option value="Fantasma">Fantasma</option>
+      <option value="Copiadora">Copiadora</option>
+      <option value="Sinergista">Sinergista</option>
+      <option value="Moralista">Moralista</option>
+      <option value="Bibliotecário">Bibliotecário</option>
+      <option value="Pacto Formado">Pacto Formado</option>
+      <option value="Força Protetora">Força Protetora</option>
+      <option value="Autoridade da Rainha">Autoridade da Rainha</option>
+      <option value="Marca de Lealdade">Marca de Lealdade</option>
+      <option value="Visão">Visão</option>
+      <option value="Curandeiro">Curandeiro</option>
+      <option value="Transparência">Transparência</option>
+      <option value="Leitura de Sorte">Leitura de Sorte</option>
+      <option value="Gala/Musa">Gala/Musa</option>
+      <option value="Modelo Social">Modelo Social</option>
+      <option value="Pavão">Pavão</option>
+      <option value="Extase Vital">Extase Vital</option>
+    </select>
+
+    <button id="btn-escolher-classe">Escolher Classe</button>
+  </section>
+
+</div>
