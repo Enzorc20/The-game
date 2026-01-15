@@ -1,0 +1,80 @@
+// ===== UPLOAD DA IMAGEM DO PERSONAGEM =====
+const inputImagem = document.getElementById("inputImagem");
+const boneco = document.getElementById("boneco");
+
+inputImagem.addEventListener("change", function () {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      boneco.innerHTML = `<img src="${e.target.result}" alt="Personagem">`;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+// ===== HABILIDADES =====
+const habilidadeInput = document.getElementById("habilidadeInput");
+const btnAddHabilidade = document.getElementById("btnAddHabilidade");
+const listaHabilidades = document.getElementById("listaHabilidades");
+
+btnAddHabilidade.addEventListener("click", function () {
+  const valor = habilidadeInput.value.trim();
+  if (valor !== "") {
+    const li = document.createElement("li");
+    li.textContent = valor;
+    listaHabilidades.appendChild(li);
+    habilidadeInput.value = "";
+  }
+});
+
+// ===== TALENTOS =====
+const talentoInput = document.getElementById("talentoInput");
+const btnAddTalento = document.getElementById("btnAddTalento");
+const listaTalentos = document.getElementById("listaTalentos");
+
+btnAddTalento.addEventListener("click", function () {
+  const valor = talentoInput.value.trim();
+  if (valor !== "") {
+    const li = document.createElement("li");
+    li.textContent = valor;
+    listaTalentos.appendChild(li);
+    talentoInput.value = "";
+  }
+});
+
+// ===== PROFISSÃO =====
+const profissaoInput = document.getElementById("profissaoInput");
+const btnAddProfissao = document.getElementById("btnAddProfissao");
+const listaProfissao = document.getElementById("listaProfissao");
+
+btnAddProfissao.addEventListener("click", function () {
+  const valor = profissaoInput.value.trim();
+  if (valor !== "") {
+    listaProfissao.textContent = valor;
+    profissaoInput.value = "";
+  }
+});
+
+// ===== INVENTÁRIO =====
+const itemInput = document.getElementById("itemInput");
+const btnAddItem = document.getElementById("btnAddItem");
+const listaItens = document.getElementById("listaItens");
+
+btnAddItem.addEventListener("click", function () {
+  const valor = itemInput.value.trim();
+  if (valor !== "") {
+    const li = document.createElement("li");
+    li.textContent = valor;
+
+    // Botão remover item
+    const btnRemover = document.createElement("button");
+    btnRemover.textContent = "X";
+    btnRemover.style.marginLeft = "10px";
+    btnRemover.addEventListener("click", () => li.remove());
+
+    li.appendChild(btnRemover);
+    listaItens.appendChild(li);
+    itemInput.value = "";
+  }
+});
