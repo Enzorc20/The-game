@@ -1,0 +1,110 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #f5f5f5;
+  padding: 20px;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* ===== HEADERS ===== */
+h2 {
+  margin-bottom: 15px;
+  color: #ffd700;
+  text-align: center;
+}
+
+/* ===== STATS ===== */
+.stats p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* ===== BOTÕES ===== */
+button {
+  background-color: #ffd700;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #e6c200;
+}
+
+/* ===== INVENTÁRIO ===== */
+.inventario ul {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.inventario li {
+  background-color: #2a2a2a;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inventario li button {
+  background-color: #ff4d4d;
+  padding: 3px 6px;
+  font-size: 12px;
+}
+
+.inventario li button:hover {
+  background-color: #e60000;
+}
+
+.inventario input[type="text"] {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  margin-right: 10px;
+  width: calc(100% - 120px);
+}
+
+/* ===== CLASSE E SUBCLASSE ===== */
+.classe select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 45%;
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+  border: none;
+}
+
+.classe button {
+  display: block;
+  width: 100%;
+}
