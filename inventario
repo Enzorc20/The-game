@@ -1,0 +1,15 @@
+// Função para exibir inventário
+function mostrarInventario() {
+    const sec = document.getElementById("itens");
+    sec.innerHTML = ""; // limpa antes
+    inventario.forEach(i => {
+        const div = document.createElement("div");
+        div.className = "item";
+        div.innerHTML = `
+            <h3>${i.nome}</h3>
+            <p>Quantidade: ${i.quantidade}</p>
+        `;
+        sec.appendChild(div);
+    });
+    document.getElementById
+  <script src="js/script-inventario.js"></script>
