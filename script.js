@@ -89,3 +89,17 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarPersonagens();
     mostrarInventario();
 });
+// ===== IMAGEM DO PERSONAGEM =====
+const inputImagem = document.getElementById("imagemPersonagem");
+const imagemMostrada = document.getElementById("imagemMostrada");
+
+inputImagem.addEventListener("change", function(event) {
+  const arquivo = event.target.files[0];
+  if (arquivo) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      imagemMostrada.src = e.target.result; // Mostra a imagem
+    };
+    reader.readAsDataURL(arquivo);
+  }
+});
