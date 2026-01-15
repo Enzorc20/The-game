@@ -1,0 +1,78 @@
+// ===== PERSONAGEM =====
+let personagem = {
+  nome: "Jogador",
+  raca: "Humano",
+  classe: null,
+  subclasse: null,
+  nivel: 1,
+  PV: 100,
+  PE: 50,
+  DEF: 10,
+  Mental: 50,
+  inventario: []
+};
+
+// ===== INVENTÁRIO =====
+function atualizarInventario() {
+  const inventarioDiv = document.getElementById("inventario-lista");
+  inventarioDiv.innerHTML = "";
+  personagem.inventario.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    const botaoRemover = document.createElement("button");
+    botaoRemover.textContent = "X";
+    botaoRemover.onclick = () => removerItem(index);
+    li.appendChild(botaoRemover);
+    inventarioDiv.appendChild(li);
+  });
+}
+
+function adicionarItem() {
+  const itemInput = document.getElementById("novo-item");
+  const item = itemInput.value.trim();
+  if(item) {
+    personagem.inventario.push(item);
+    itemInput.value = "";
+    atualizarInventario();
+  }
+}
+
+function removerItem(index) {
+  personagem.inventario.splice(index, 1);
+  atualizarInventario();
+}
+
+// ===== ATRIBUTOS =====
+function atualizarStats() {
+  document.getElementById("pv").textContent = personagem.PV;
+  document.getElementById("pe").textContent = personagem.PE;
+  document.getElementById("def").textContent = personagem.DEF;
+  document.getElementById("mental").textContent = personagem.Mental;
+}
+
+function subirNivel() {
+  personagem.nivel++;
+  personagem.PV += 10;    // aumento PV ao subir de nível
+  personagem.PE += 5;     // aumento PE
+  personagem.DEF += 2;    // aumento DEF
+  personagem.Mental += 3; // aumento Mental
+  atualizarStats();
+  alert(`Parabéns! ${personagem.nome} subiu para o nível ${personagem.nivel}`);
+}
+
+// ===== CLASSE E SUBCLASSE =====
+function escolherClasse() {
+  const classeSelect = document.getElementById("classe-select");
+  const subclasseSelect = document.getElementById("subclasse-select");
+  personagem.classe = classeSelect.value;
+  personagem.subclasse = subclasseSelect.value;
+  alert(`Você escolheu a classe ${personagem.classe} e a subclasse ${personagem.subclasse}`);
+}
+
+// ===== INICIALIZAÇÃO =====
+document.getElementById("btn-adicionar").addEventListener("click", adicionarItem);
+document.getElementById("btn-nivel").addEventListener("click", subirNivel);
+document.getElementById("btn-escolher-classe").addEventListener("click", escolherClasse);
+
+atualizarInventario();
+atualizarStats();
