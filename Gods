@@ -1,0 +1,104 @@
+// js/script-classes.js
+
+// Estrutura de classes dos deuses
+const classesDeuses = {
+  ZEUS: {
+    nome: "Zeus",
+    dominio: "Céu e Autoridade",
+    habilidades: ["Olhar do Rei dos Deuses", "Trono da Supremacia", "Anulação Divina", "Aura de Autoridade"],
+    bonus: { pv: 50 } // Zeus ganha bônus em PV
+  },
+  POSEIDON: {
+    nome: "Poseidon",
+    dominio: "Mares e Terremotos",
+    habilidades: ["Controle Absoluto da Água", "Tsunamis e Maremotos", "Terremotos Devastadores", "Invocação de Monstros Marinhos"],
+    bonus: { pe: 50 } // Poseidon ganha bônus em PE
+  },
+  HEFESTO: {
+    nome: "Hefesto",
+    dominio: "Forja e Metal",
+    habilidades: ["Criação de Armas Divinas", "Aprimoramento Permanente de Equipamentos", "Construção de Autômatos", "Resistência Extrema ao Fogo"],
+    bonus: { defesa: 50 } // Hefesto ganha bônus em defesa
+  },
+  HADES: {
+    nome: "Hades",
+    dominio: "Submundo e Mortes",
+    habilidades: ["Domínio das Almas", "Prisão Eterna", "Invocação de Mortos e Espectros", "Imunidade a Medo e Corrupção"],
+    bonus: {}
+  },
+  ARES: {
+    nome: "Ares",
+    dominio: "Guerra e Conflito",
+    habilidades: ["Força Crescente", "Inspira Fúria", "Reduz Defesa Inimiga", "Ignora Dor e Dano Parcial"],
+    bonus: {}
+  },
+  ATENA: {
+    nome: "Atena",
+    dominio: "Estratégia e Sabedoria",
+    habilidades: ["Antecipação de Ações", "Bônus de Defesa e Precisão", "Anula Ataques Surpresa", "Vantagem Tática"],
+    bonus: {}
+  },
+  APOLO: {
+    nome: "Apolo",
+    dominio: "Luz e Profecia",
+    habilidades: ["Cura Divina", "Visões Futuras", "Ataques de Luz Purificadora", "Remove Maldições"],
+    bonus: {}
+  },
+  ARTEMIS: {
+    nome: "Ártemis",
+    dominio: "Caça e Precisão",
+    habilidades: ["Ataques à Distância Perfeitos", "Críticos Garantidos", "Movimento Invisível", "Invocação de Feras Espirituais"],
+    bonus: {}
+  },
+  AFRODITE: {
+    nome: "Afrodite",
+    dominio: "Desejo e Emoções",
+    habilidades: ["Controle Emocional", "Hesitação e Confusão Inimiga", "Quebra de Alianças", "Paralisia sem Dano Físico"],
+    bonus: {}
+  },
+  HERMES: {
+    nome: "Hermes",
+    dominio: "Velocidade e Truques",
+    habilidades: ["Velocidade Divina", "Teleporte Curto", "Roubo Divino", "Sempre Age Primeiro"],
+    bonus: {}
+  },
+  DEMETER: {
+    nome: "Deméter",
+    dominio: "Vida e Colheita",
+    habilidades: ["Regeneração Constante", "Controle Vegetal", "Enfraquece Inimigos em Natureza", "Provoca Fome e Decadência"],
+    bonus: {}
+  },
+  DIONISO: {
+    nome: "Dioniso",
+    dominio: "Caos e Êxtase",
+    habilidades: ["Confusão Mental", "Inimigos Atacam Aliados", "Fortalece Aliados Caóticos", "Efeitos Imprevisíveis"],
+    bonus: {}
+  }
+};
+
+// Função para criar semideus escolhendo 2 habilidades
+function criarSemideus(nome, deusPai) {
+  const deus = classesDeuses[deusPai];
+  if (!deus) return null;
+
+  // Pega aleatoriamente 2 habilidades do deus
+  let habilidadesEscolhidas = [];
+  while (habilidadesEscolhidas.length < 2) {
+    let h = deus.habilidades[Math.floor(Math.random() * deus.habilidades.length)];
+    if (!habilidadesEscolhidas.includes(h)) habilidadesEscolhidas.push(h);
+  }
+
+  return {
+    nome: nome,
+    pai: deusPai,
+    habilidades: habilidadesEscolhidas,
+    bonus: deus.bonus,
+    pv: 100 + (deus.bonus.pv || 0),
+    pe: 50 + (deus.bonus.pe || 0),
+    defesa: 20 + (deus.bonus.defesa || 0)
+  };
+}
+
+// Exemplo de uso
+const semideus1 = criarSemideus("Helios", "ZEUS");
+console.log(semideus1);
