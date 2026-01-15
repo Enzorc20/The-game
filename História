@@ -1,0 +1,84 @@
+// ===== BONECO =====
+const btnAddImg = document.getElementById("btnAddImg");
+const imgPersonagem = document.getElementById("imgPersonagem");
+const imgUrl = document.getElementById("imgUrl");
+
+btnAddImg.addEventListener("click", () => {
+  if (imgUrl.value.trim() !== "") {
+    imgPersonagem.src = imgUrl.value;
+    imgUrl.value = "";
+  }
+});
+
+// ===== ATRIBUTOS E NÍVEL =====
+let forca = 10, agilidade = 10, presenca = 10, inteligencia = 10, vigor = 10;
+let pv = 50, pe = 30, defesa = 5;
+
+const mostraAtributos = () => {
+  document.getElementById("forca").textContent = forca;
+  document.getElementById("agilidade").textContent = agilidade;
+  document.getElementById("presenca").textContent = presenca;
+  document.getElementById("inteligencia").textContent = inteligencia;
+  document.getElementById("vigor").textContent = vigor;
+  document.getElementById("pv").textContent = pv;
+  document.getElementById("pe").textContent = pe;
+  document.getElementById("defesa").textContent = defesa;
+};
+
+document.getElementById("subirNivel").addEventListener("click", () => {
+  forca += 2; agilidade += 2; presenca += 2; inteligencia += 2; vigor += 2;
+  pv += 10; pe += 5; defesa += 1;
+  mostraAtributos();
+});
+
+mostraAtributos();
+
+// ===== PROFISSÃO =====
+const btnProfissao = document.getElementById("btnProfissao");
+const mostraProfissao = document.getElementById("mostraProfissao");
+btnProfissao.addEventListener("click", () => {
+  const profissao = document.getElementById("inputProfissao").value.trim();
+  if (profissao !== "") {
+    mostraProfissao.textContent = profissao;
+    document.getElementById("inputProfissao").value = "";
+  }
+});
+
+// ===== HABILIDADES =====
+const btnHabilidade = document.getElementById("btnHabilidade");
+const listaHabilidades = document.getElementById("listaHabilidades");
+
+btnHabilidade.addEventListener("click", () => {
+  const hab = document.getElementById("inputHabilidade").value.trim();
+  if (hab !== "") {
+    const li = document.createElement("li");
+    li.textContent = hab;
+    listaHabilidades.appendChild(li);
+    document.getElementById("inputHabilidade").value = "";
+  }
+});
+
+// ===== TALENTOS =====
+const btnTalento = document.getElementById("btnTalento");
+const listaTalentos = document.getElementById("listaTalentos");
+
+btnTalento.addEventListener("click", () => {
+  const tal = document.getElementById("inputTalento").value.trim();
+  if (tal !== "") {
+    const li = document.createElement("li");
+    li.textContent = tal;
+    listaTalentos.appendChild(li);
+    document.getElementById("inputTalento").value = "";
+  }
+});
+
+// ===== INVENTÁRIO =====
+const nomeItemInput = document.getElementById("nomeItemInput");
+const descItemInput = document.getElementById("descItemInput");
+const btnAddItem = document.getElementById("btnAddItem");
+const listaItens = document.getElementById("listaItens");
+
+btnAddItem.addEventListener("click", function () {
+  const nome = nomeItemInput.value.trim();
+  const desc = descItemInput.value.trim();
+  if (nome !== "" && desc
