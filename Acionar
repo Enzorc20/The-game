@@ -1,0 +1,31 @@
+// ===== INVENTÁRIO COMPLETO =====
+const nomeItemInput = document.getElementById("nomeItemInput");
+const descItemInput = document.getElementById("descItemInput");
+const btnAddItem = document.getElementById("btnAddItem");
+const listaItens = document.getElementById("listaItens");
+
+btnAddItem.addEventListener("click", function () {
+  const nome = nomeItemInput.value.trim();
+  const desc = descItemInput.value.trim();
+  if (nome !== "" && desc !== "") {
+    const li = document.createElement("li");
+
+    // Estrutura igual Ordem Paranormal
+    li.innerHTML = `<strong>${nome}</strong>: ${desc}`;
+
+    // Botão remover item
+    const btnRemover = document.createElement("button");
+    btnRemover.textContent = "X";
+    btnRemover.style.marginLeft = "10px";
+    btnRemover.addEventListener("click", () => li.remove());
+
+    li.appendChild(btnRemover);
+    listaItens.appendChild(li);
+
+    // Limpa os inputs
+    nomeItemInput.value = "";
+    descItemInput.value = "";
+  } else {
+    alert("Preencha o nome e a descrição do item!");
+  }
+});
